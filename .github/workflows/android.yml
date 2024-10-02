@@ -1,4 +1,4 @@
-name: Automatic Build + Upload on push 
+name: Android CI
 
 on:
   push:
