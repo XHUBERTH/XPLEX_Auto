@@ -53,18 +53,25 @@ android {
     buildTypes {
         release {
             shrinkResources true
-            minifyEnabled true
-            useProguard = true
+            //minifyEnabled true
+            //useProguard = true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            //signingConfig signingConfigs.release
+            if (signingConfigs.release.storeFile) {
+                signingConfig signingConfigs.release
+            }
         }
         debug {
             debuggable true
             shrinkResources false
-            minifyEnabled false
-            useProguard = false
+            //minifyEnabled false
+            //useProguard = false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            //signingConfig signingConfigs.debug
+            if (signingConfigs.debug.storeFile) {
+                signingConfig signingConfigs.debug
+            }
+
         }
     }
 
